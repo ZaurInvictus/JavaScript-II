@@ -28,17 +28,19 @@ getLength(items, (len) => {
 });
 
 
-function last(arr, cb) { 
+function last(arr, cb) {
   // last passes the last item of the array into the callback.
-  return cb(arr[arr.length-1]);
+  return cb(arr[arr.length - 1]);
 }
-last(items, (callback) => {console.log(callback);} );
+last(items, (callback) => {
+  console.log(callback);
+});
 
 function sumNums(x, y, cb) {
   // sumNums adds two numbers (x, y) and passes the result to the callback.
   return cb(x + y);
 }
-sumNums(2 , 3, (callback) => {
+sumNums(2, 3, (callback) => {
   console.log(callback);
 });
 
@@ -47,14 +49,14 @@ function multiplyNums(x, y, cb) {
   return cb(x * y);
 }
 multiplyNums(3, 4, (callback) => {
- console.log(callback);
+  console.log(callback);
 });
 
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
-  for(let i = 0; i < list.length; i++) {
-    if(list[i] == item) {
+  for (let i = 0; i < list.length; i++) {
+    if (list[i] == item) {
       cb(true);
     } else {
       cb(false);
@@ -63,15 +65,21 @@ function contains(item, list, cb) {
 }
 
 contains('Gum', items, (callback) => {
-    console.log(callback);
+  console.log(callback);
 });
-  
+
 
 
 /* STRETCH PROBLEM */
+const names = ['John', 'Paul', 'George', 'Ringo', 'John'];
 
 function removeDuplicates(array, cb) {
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
-}
+  return cb(array.filter((e, index) => array.indexOf(e) === index));
+};
+
+removeDuplicates(names, (callback) => {
+  console.log(callback);
+});

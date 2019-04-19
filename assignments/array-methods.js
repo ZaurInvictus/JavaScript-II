@@ -112,3 +112,4 @@ runners.map(e => {
 });
 console.log(smallSizes);
 
+//The biggest difference between .forEach and .map is that map returns a new array of elements

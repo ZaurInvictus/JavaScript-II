@@ -2,7 +2,8 @@
 // Write a simple closure of your own creation.  Keep it simple!
 
 const name = 'Zaur';
-function returnName () {
+
+function returnName() {
   return name;
 }
 returnName();
@@ -32,15 +33,14 @@ const counterFactory = () => {
   // Return an object that has two methods called `increment` and `decrement`.
   // `increment` should increment a counter variable in closure scope and return it.
   // `decrement` should decrement the counter variable and return it.
-  return obj = {
-    count: 0,
-    increment: function() {
+  let count = 0;
+   const obj = {
+    increment: function () {
       return ++count;
     },
-    decrement: function() {
+    decrement: function () {
       return --count;
     }
   }
 };
-
 
